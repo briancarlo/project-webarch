@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+        <head>
+                <meta charset="utf-8">
+                <title>NERP!</title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                <script type=text/javascript src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script type=text/javascript>
+                <style>
+                        body {
+                               /* background-image: url('http://www.troll.me/images/captian-herpin-derpin/make-it-nerp-number-derp.jpg') */
+                        }
+
+                </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <a class="navbar-brand" href="#">NERP GENERATOR</a>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">&nbsp;</div>
+                        <div class="col-md-8">
+                            <p>Hello, NERPers!</p>
+                            <form id="URLinput" role="form" action="http://people.ischool.berkeley.edu/~brian.carlo/server/shorts" method="post" target="_self.html">
+                                <div class="form-group">
+                                    <label>URL to convert</label>
+                                    <input name="url" type="text" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Short path</label>
+                                    <input name="shortpath" type="text" value="">   
+                                </div>
+
+                                <button type="submit" id="submitbutton" class="btn btn-default">Generate</button>
+
+                            </form>
+                        </div>
+                        <div class="col-md-2">&nbsp;</div>
+                </div>                       
+            </div>
+
+            <script type=text/javascript>
+            $(function() {
+                $("#submitbutton").click(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://people.ischool.berkeley.edu/~brian.carlo/server/shorts",
+                        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                        data: { shortpath: $('input[name="shortpath"]').val() } 
+
+                        /*
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert(errorThrown);
+                        }
+                        */
+
+
+                    });     
+                });
+            });
+            </script>
+
+        </body>
+</html>
