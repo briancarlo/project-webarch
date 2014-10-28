@@ -64,8 +64,8 @@ def shorts_put():
             for i in range(7):
                 myPath = myPath + chr(random.choice(possible))
        
-            while db.get(myPath):                       # if myPath somehow exists, create more until a unique one is created
-                myPath = ""
+            while db.get(myPath):                       # if myPath somehow already exists, create more versions ... 
+                myPath = ""                             # ... until a unique myPath is created
                 for i in range(7):
                     myPath = myPath + chr(random.choice(possible))  
 
