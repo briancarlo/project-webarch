@@ -70,7 +70,7 @@ def shorts_put():
                     myPath = myPath + chr(random.choice(possible))  
 
             db[inputURL] = myPath                       # add the URL to the dict as a key; now any future attempts to ..  
-            db[myHash] = inputURL                       # ... shorten the same URL (without a specified shortpath) will ...
+            db[myPath] = inputURL                       # ... shorten the same URL (without a specified shortpath) will ...
             shortpath = myPath                          # ... return the same hash. And, of course, add the myPath key to the DB like normal.
     
     # if URL is sent WITH a shortpath, just add that key/value pair to the DB
