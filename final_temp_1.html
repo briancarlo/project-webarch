@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-us">
+        <head>
+                <meta charset="utf-8">
+                <title>NERP!</title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+                <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Slackey' rel='stylesheet' type='text/css'>
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                <style>
+                        .navbar{
+                            height: 100px;
+                        }
+
+                        .navbar-brand{
+                            font-family: "Slackey", cursive;
+                            font-size: 50px;
+                            margin-top: 25px;
+                        }
+
+                        label{
+                            font-family: "Ubuntu Mono", tahoma;
+                            font-size: 16px;
+                        }
+
+                        p{
+                            font-family: "Ubuntu Mono", tahoma;
+                            font-size: 16px;
+                            margin-top: 30px;
+                        }
+
+                        button{
+                            font-family: "Ubuntu Mono", tahoma;
+                            color: yellow;
+                            margin-top: 15px;
+                        }
+
+                        .help-block{
+                            font-family: "Ubuntu Mono", tahoma;
+                            color: gray;
+                        }
+
+                </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <a class="navbar-brand" href="#">BIGTIME NERP GENERATOR</a>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">&nbsp;</div>
+                        <div class="col-md-8">
+                            <p>Have you ever looked at a URL and thought to yourself, "This is much too short. It needs to get NERPed bigtime."? Well, now you can NERP that ish! Just fill out the form below.</p>
+                            <hr>
+                            <form id="URLinput" role="form" action="http://people.ischool.berkeley.edu/~brian.carlo/server/shorts" method="post" target="_self">
+                                <div class="form-group">
+                                    <label for="url">URL to convert: </label>
+                                    <input style="width: 600px;" name="url" id="url" type="text" value="" placeholder="http://">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shortpath">Short path: </label>
+                                    <input name="shortpath" id="shortpath" type="text" value="">
+                                    <span class="help-block">Be sure to enter only letters. If you enter nothing, a path will be generated for you!</span>   
+                                </div>
+
+                                <button type="submit" id="submitbutton" class="btn btn-info">Generate</button>
+
+                            </form>
+                        </div>
+                        <div class="col-md-2">&nbsp;</div>
+                </div>
+                <div class="row">
+
+
+                </div>                       
+            </div>
+
+            <script type=text/javascript>
+            $(document).ready(function(){
+                            var patt = /[^A-Za-z]/;
+                            $('#shortpath').keyup(function() {
+                                if(patt.test($('#shortpath').val())){
+                                    $('button').addClass('disabled');
+                                } else { 
+                                    $('button').removeClass('disabled');
+                                };
+                            });
+                        });
+            </script>
+        </body>
+</html>
