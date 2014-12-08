@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+        <head>
+                <meta charset="utf-8">
+                <title>NERP!</title>
+                <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Slackey' rel='stylesheet' type='text/css'>
+                <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300" rel="stylesheet" type="text/css">
+                <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet" type="text/css">
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+                <style>
+                        body {
+                            background-color: #66FFFF;
+                        }
+
+                        .navbar{
+                            width: 700px;
+                            border: 0px solid yellow;
+                            margin-right: auto;
+                            margin-left: auto;
+                            height: 50px;
+                            position: relative;
+                            margin-top: 20px;
+                        }
+
+                        .login{
+                            border: 0px dotted green;
+                            color: #000066;
+                            float: right;
+                            font-family: "Roboto Slab", tahoma;
+                            font-size: 16px;
+                            position: absolute;
+                            bottom:0;
+                            right: 0;
+                            text-decoration: none;
+                        }
+
+                        a.brand{
+                            text-decoration: none;
+                            color: #000066;
+                            margin-bottom: 0px;
+                            vertical-align: bottom;
+                            font-family: "Roboto Slab", tahoma;
+                            font-size: 29px;
+                            font-weight: 700;
+                            border: 0px solid blue;
+                            float:left;
+                            position: absolute;
+                            bottom: 0;
+                            padding: 0px;
+                        }
+
+                        .urlentry{
+                            margin-top: 2px;
+                            border: 0px solid red;
+                            width: 700px;
+                            margin-right: auto;
+                            margin-left: auto;
+                            padding: 20px;
+                            background-color: white;
+                        }
+
+
+                        label{
+                            font-family: "Roboto Slab", tahoma;
+                            font-size: 16px;
+                        }
+
+                        h3{
+                            font-family: "Roboto Slab", tahoma;
+                            font-size: 20px;
+                            margin-bottom: 0px;
+                        }
+
+                        p{
+                            font-family: "Open Sans", tahoma;
+                            font-weight: 300;
+                            font-style: italic;
+                            font-size: 14px;
+                            margin-top: 5px;
+                        }
+
+                        button{
+                            font-family: "Ubuntu Mono", tahoma;
+                            color: yellow;
+                            margin-top: 15px;
+                        }
+
+                        .help-block{
+                            font-family: "Open Sans", tahoma;
+                            font-weight: 300;
+                            color: gray;
+                            font-size: 12px;
+                        }
+
+                        .btn {
+                            margin-left: 0px;
+                            margin-bottom: 15px;
+                            background-color:transparent;
+                            -moz-border-radius:7px;
+                            -webkit-border-radius:7px;
+                            border-radius:7px;
+                            border:1px solid #282c80;
+                            display:inline-block;
+                            cursor:pointer;
+                            color:#24477a;
+                            font-family:arial;
+                            font-size:12px;
+                            text-decoration:none;
+                          }
+
+                        .btn:hover {
+                            background-color:transparent;
+                        }
+
+                        .btn:active {
+                            position:relative;
+                            top:1px;
+                        }
+
+                        .form-group {
+                            margin-top: 15px;
+                            margin-bottom: 0px;
+                        }
+
+                        .signup{
+                            margin-top: 10px;
+                            border: 0px solid red;
+                            width: 700px;
+                            margin-right: auto;
+                            margin-left: auto;
+                            padding: 20px;
+                            background-color: white;                           
+                        }
+
+                </style>
+        </head>
+        <body>
+
+            </div>
+            <div class="navbar" role="navigation">
+                <div>
+                    <a class="brand" href="home.html">BIGTIME NERP GENERATOR</a>
+                </div>
+                <div>
+                    <a class="login" href="login.html">Log In</a>
+                </div>
+            </div>
+
+            <div class="urlentry">
+                <p>Have you ever looked at a URL and thought to yourself, "This is much too short. It needs to get NERPed bigtime."? Well, now you can NERP that shit! Just fill out the form below.</p>
+                <hr>
+                <form id="URLinput" role="form" action="http://people.ischool.berkeley.edu/~brian.carlo/server/shorts" method="post" target="_self">
+                    <div class="form-group">
+                        <label for="url">URL to convert: </label>
+                        <input style="width: 400px;" name="url" id="url" type="text" value="" placeholder="http://">
+                    </div>
+                    <div class="form-group">
+                        <label for="shortpath">Short path: </label>
+                        <input name="shortpath" id="shortpath" type="text" value="">
+                        <span class="help-block">Be sure to enter only letters. If you enter nothing, a path will be generated for you!</span>   
+                    </div>
+                    <button type="submit" id="submitbutton" class="btn">Generate</button>
+                </form>
+
+                <div class="messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <h1>{{ message }}<h1>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                </div>
+
+            <div class="signup">
+                {% block body %}{% endblock %}
+            </div>
+
+
+            <script type=text/javascript>
+            $(document).ready(function(){
+                            var patt = /[^A-Za-z]/;
+                            $('#shortpath').keyup(function() {
+                                if(patt.test($('#shortpath').val())){
+                                    $('button').addClass('disabled');
+                                } else { 
+                                    $('button').removeClass('disabled');
+                                };
+                            });
+                        });
+
+
+            $(function() {
+                $("#submitbutton").click(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://people.ischool.berkeley.edu/~brian.carlo/server/shorts",
+                        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                        data: { shortpath: $('input[name="shortpath"]').val() },
+                        success: function(data) {
+                            $('#shortpath').text(data.value);
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert(errorThrown);
+                        }
+                    });
+                });
+            });
+
+            </script>
+
+        </body>
+</html>

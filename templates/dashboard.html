@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+	<h3>My Nerps</h3>
+
+	<div id="dashboard">
+	    {#
+	    <table id="linkstats">
+	        <tr>
+	        	<td><a href="http://espn.go.com">http://espn.go.com</a></td>
+	        	<td>12</td>
+	        </tr>
+	        <tr>	
+	        	<td><a href="http://apple.com">http://apple.com</a></td>
+	        	<td>19</td>
+	        </tr>
+	    </table>
+
+	    <div id="topfive">
+	    	<ul id="toplinks">
+	    		<li><a href="http://ninjaturtles.com">http://ninjaturtles.com</a></li>
+	    		<li><a href="http://sadness.com">http://sadness.com</a></li>
+	    		<li><a href="http://vimeo.com">http://vimeo.com</a></li>
+	    		<li><a href="http://zombo.com">http://zombo.com</a></li>
+	    		<li><a href="http://bn.com">http://bn.com</a></li>
+	    	</ul>
+	    </div>
+
+	    #}
+	    {% for item in items %}
+	    	<li>{{ item.path }}, {{ item.url }}, {{ item.clicks }}</li>
+	    	{# <li>{{ item.url }}</li> #}
+	    {% endfor %}
+	    
+	</div>
+{% endblock %}
