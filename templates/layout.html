@@ -6,140 +6,18 @@
                 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Slackey' rel='stylesheet' type='text/css'>
                 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300" rel="stylesheet" type="text/css">
                 <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet" type="text/css">
+                <link rel="stylesheet" type="text/css" href="static/css/nerpstyle.css">
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-                <style>
-                        body {
-                            background-color: #66FFFF;
-                        }
-
-                        .navbar{
-                            width: 700px;
-                            border: 0px solid yellow;
-                            margin-right: auto;
-                            margin-left: auto;
-                            height: 50px;
-                            position: relative;
-                            margin-top: 20px;
-                        }
-
-                        .login{
-                            border: 0px dotted green;
-                            color: #000066;
-                            float: right;
-                            font-family: "Roboto Slab", tahoma;
-                            font-size: 16px;
-                            position: absolute;
-                            bottom:0;
-                            right: 0;
-                            text-decoration: none;
-                        }
-
-                        a.brand{
-                            text-decoration: none;
-                            color: #000066;
-                            margin-bottom: 0px;
-                            vertical-align: bottom;
-                            font-family: "Roboto Slab", tahoma;
-                            font-size: 29px;
-                            font-weight: 700;
-                            border: 0px solid blue;
-                            float:left;
-                            position: absolute;
-                            bottom: 0;
-                            padding: 0px;
-                        }
-
-                        .urlentry{
-                            margin-top: 2px;
-                            border: 0px solid red;
-                            width: 700px;
-                            margin-right: auto;
-                            margin-left: auto;
-                            padding: 20px;
-                            background-color: white;
-                        }
-
-
-                        label{
-                            font-family: "Roboto Slab", tahoma;
-                            font-size: 16px;
-                        }
-
-                        h3{
-                            font-family: "Roboto Slab", tahoma;
-                            font-size: 20px;
-                            margin-bottom: 0px;
-                        }
-
-                        p{
-                            font-family: "Open Sans", tahoma;
-                            font-weight: 300;
-                            font-style: italic;
-                            font-size: 14px;
-                            margin-top: 5px;
-                        }
-
-                        button{
-                            font-family: "Ubuntu Mono", tahoma;
-                            color: yellow;
-                            margin-top: 15px;
-                        }
-
-                        .help-block{
-                            font-family: "Open Sans", tahoma;
-                            font-weight: 300;
-                            color: gray;
-                            font-size: 12px;
-                        }
-
-                        .btn {
-                            margin-left: 0px;
-                            margin-bottom: 15px;
-                            background-color:transparent;
-                            -moz-border-radius:7px;
-                            -webkit-border-radius:7px;
-                            border-radius:7px;
-                            border:1px solid #282c80;
-                            display:inline-block;
-                            cursor:pointer;
-                            color:#24477a;
-                            font-family:arial;
-                            font-size:12px;
-                            text-decoration:none;
-                          }
-
-                        .btn:hover {
-                            background-color:transparent;
-                        }
-
-                        .btn:active {
-                            position:relative;
-                            top:1px;
-                        }
-
-                        .form-group {
-                            margin-top: 15px;
-                            margin-bottom: 0px;
-                        }
-
-                        .signup{
-                            margin-top: 10px;
-                            border: 0px solid red;
-                            width: 700px;
-                            margin-right: auto;
-                            margin-left: auto;
-                            padding: 20px;
-                            background-color: white;                           
-                        }
-
-                </style>
+                
         </head>
+
+        
         <body>
 
             </div>
             <div class="navbar" role="navigation">
                 <div>
-                    <a class="brand" href="home.html">BIGTIME NERP GENERATOR</a>
+                    <a class="brand" href="home.html">Bigtime Nerp Generator</a>
                 </div>
                 <div>
                     <a class="login" href="login.html">Log In</a>
@@ -166,7 +44,7 @@
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         {% for message in messages %}
-                            <h1>{{ message }}<h1>
+                            <h4>{{ message }}<h4>
                         {% endfor %}
                     {% endif %}
                 {% endwith %}

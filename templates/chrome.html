@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-us">
+        <head>
+                <meta charset="utf-8">
+                <title>NERP Generator</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300' rel='stylesheet' type='text/css'>
+
+    <style>
+
+      body {
+        min-width: 400px;
+        overflow-x: hidden;
+        background-color: #66FFFF;
+        color: #000066;
+        font-family: 'Slackey', serif;
+      }
+
+      img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      }
+
+      p {
+        color: #000066;
+      }
+
+      h1{
+        color: #000066;
+        font-size: 36px;
+        font-family: 'Slackey', serif;
+        text-align: center;
+      }
+
+      .auto_url{
+        width: 100%;
+        padding: 15px;
+      }
+
+      .form-group{
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 2px;
+      }
+
+      #url{
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+      }
+
+      .help-text{
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+      }
+
+      .btn {
+        margin-left: 0px;
+        margin-bottom: 15px;
+        background-color:#66FFFF;
+        -moz-border-radius:7px;
+        -webkit-border-radius:7px;
+        border-radius:7px;
+        border:2px solid #000066;
+        display:inline-block;
+        cursor:pointer;
+        color:#000066;
+        font-family:"Slackey";
+        font-size:16px;
+        text-decoration:none;
+      }
+
+      .btn:hover {
+        background-color:white;
+      }
+      .btn:active {
+        position:relative;
+        top:1px;
+      }
+      textarea{
+        font-family: 'Open Sans', tahoma;
+        font-weight:300;
+      }
+      #url_long{
+        padding: 2px;
+      }
+      h4{
+        background-color: white;
+        padding: 5px;
+        font-size: 16px;
+        font-family: 'Open Sans', tahoma;
+      }
+      #result{
+        display: none;
+      }
+
+    </style>
+              
+        </head>
+
+
+        <body>
+
+            
+            <div class="wrapper">
+                <h1>NERP(this)</h1>
+                <hr>
+                <form id="URLinput" role="form" action="http://people.ischool.berkeley.edu/~brian.carlo/server/chrome" method="post" target="_self">
+                    <div class="auto_url">
+                        <label for="url">URL to convert:&nbsp;</label><br>
+                        <textarea name="url" id="url" form="URLinput" rows="2" cols="60"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="shortpath">Short path: </label>
+                        <input name="shortpath" id="shortpath" type="text" value=""><br><br>
+                        <span class="help-text">Be sure to enter only letters!<br> If you enter nothing, a path will be generated for you!</span>   
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Note (optional):</label><br>
+                        <textarea name="note" id="note" form="URLinput" rows="4" cols="45">Enter text here...</textarea>
+                        <br>
+                    </div>
+
+                    <button type="submit" id="submitbutton" class="btn">Generate</button>
+                </form>
+
+                <div class="messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <h4>{{ message }}</h4>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                </div>
+
+
+
+            <script type=text/javascript>
+            $(document).ready(function(){
+                            var patt = /[^A-Za-z]/;
+                            $('#shortpath').keyup(function() {
+                                if(patt.test($('#shortpath').val())){
+                                    $('button').addClass('disabled');
+                                } else { 
+                                    $('button').removeClass('disabled');
+                                };
+                            });
+                        });
+
+
+            $(function() {
+                $("#submitbutton").click(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://people.ischool.berkeley.edu/~brian.carlo/server/shorts",
+                        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                        data: { shortpath: $('input[name="shortpath"]').val() },
+                        success: function(data) {
+                            $('#shortpath').text(data.value);
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert(errorThrown);
+                        }
+                    });
+                });
+            });
+
+            </script>
+
+        </body>
+</html>

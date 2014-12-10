@@ -1,10 +1,14 @@
 {% extends "layout.html" %}
 {% block body %}
-  <form action="" method=post class="form-horizontal">
-    <h3>Sign up for some serious Nerping </h3>
 
+
+
+  <h3>Sign up for some serious Nerping </h3>
+
+  <form action="" method=post class="form-horizontal">
     <div class="control-group">
         <div class="controls">
+          <label for="email">Enter your email address: </label>
           <input type="email" id="email" name="email" class="input-xlarge"
             placeholder="Enter Email" value="{{ request.form.email }}"
             required>
@@ -13,17 +17,16 @@
  
     <div class="control-group">
         <div class="controls">
+          <label for="password">Choose a password: </label>
           <input type="password" id="password" name="password" class="input-xlarge"
             placeholder="Enter Password" value="{{ request.form.password }}"
             required>
         </div>
     </div>
  
-
- 
     <div class="control-group">
         <div class="controls">
-          <button type="submit" class="btn btn-success">Signup</button>
+          <button type="submit" class="btn">Become a Nerper</button>
         </div>
     </div>
   </form>
