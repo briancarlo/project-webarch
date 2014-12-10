@@ -1,0 +1,75 @@
+ * Running on http://127.0.0.1:63006/
+ * Restarting with reloader
+127.0.0.1 - - [30/Oct/2014 20:08:45] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [30/Oct/2014 20:08:49] "GET /home.html HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2014 20:08:49] "GET /home?name=Brian%20Carlo&title=Info%20253.%20Web%20Architecture HTTP/1.1" 404 -
+--------------------------------------------------------------------------------
+DEBUG in app [./app.py:74]:
+http://espn.go.com/
+--------------------------------------------------------------------------------
+127.0.0.1 - - [30/Oct/2014 20:09:00] "POST /shorts HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2014 20:09:03] "GET /shorts/sadfasdfsdfa HTTP/1.1" 302 -
+127.0.0.1 - - [02/Nov/2014 23:01:44] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2014 23:01:51] "GET /home.html HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+DEBUG in app [./app.py:74]:
+https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=12&ct=1414998156&rver=6.4.6456.0&wp=MBI_SSL_SHARED&wreply=https:%2F%2Fmail.live.com%2Fdefault.aspx%3Frru%3Dinbox&lc=1033&id=64855&mkt=en-US&cbcxt=mai/
+--------------------------------------------------------------------------------
+127.0.0.1 - - [02/Nov/2014 23:02:36] "POST /shorts HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2014 23:02:44] "GET /shorts/hml HTTP/1.1" 302 -
+--------------------------------------------------------------------------------
+DEBUG in app [./app.py:74]:
+http://espn.go.com/
+--------------------------------------------------------------------------------
+127.0.0.1 - - [02/Nov/2014 23:03:21] "POST /shorts HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2014 23:03:25] "GET /shorts/plurp HTTP/1.1" 302 -
+--------------------------------------------------------------------------------
+DEBUG in app [./app.py:74]:
+http://lynndoan.com/
+--------------------------------------------------------------------------------
+127.0.0.1 - - [02/Nov/2014 23:03:49] "POST /shorts HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2014 23:03:54] "GET /shorts/swurp HTTP/1.1" 302 -
+127.0.0.1 - - [05/Nov/2014 16:32:29] "GET /home.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2014 16:33:25] "GET /home.html HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+DEBUG in app [./app.py:74]:
+http://www.cnn.com/
+--------------------------------------------------------------------------------
+127.0.0.1 - - [05/Nov/2014 16:33:42] "POST /shorts HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2014 16:34:12] "GET /home.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2014 16:34:43] "GET /shorts/xmgVRl2 HTTP/1.1" 302 -
+127.0.0.1 - - [05/Nov/2014 16:56:14] "GET /home.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2014 16:56:57] "POST /shorts HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2014 16:57:11] "GET /shorts HTTP/1.1" 405 -
+127.0.0.1 - - [05/Nov/2014 16:58:27] "POST /shorts HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/SocketServer.py", line 284, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 310, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python2.7/SocketServer.py", line 640, in __init__
+    self.finish()
+  File "/usr/lib64/python2.7/SocketServer.py", line 693, in finish
+    self.wfile.flush()
+  File "/usr/lib64/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+127.0.0.1 - - [05/Nov/2014 16:58:27] "HEAD /shorts HTTP/1.1" 405 -
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/SocketServer.py", line 284, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 310, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python2.7/SocketServer.py", line 640, in __init__
+    self.finish()
+  File "/usr/lib64/python2.7/SocketServer.py", line 693, in finish
+    self.wfile.flush()
+  File "/usr/lib64/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+127.0.0.1 - - [05/Nov/2014 17:27:43] "GET /home.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2014 20:20:16] "GET /home.html HTTP/1.1" 200 -

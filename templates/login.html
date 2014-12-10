@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+  <form action="" method=post class="form-horizontal">
+    <h3> LOG IN TO NERRRRRP! </h3>
+    <div class="control-group">
+        <div class="controls">
+          <label for="email">Enter your email address: </label>
+          <input type="text" id="email" name="email" class="input-xlarge"
+            placeholder="Enter Email" required>
+        </div>
+    </div>
+ 
+    <div class="control-group">
+        <div class="controls">
+          <label for="password">Enter your password: </label>
+          <input type="password" id="password" name="password" class="input-xlarge"
+            placeholder="Enter Password" required>
+        </div>
+    </div>
+ 
+    <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn">Get to Nerpin'</button>
+        </div>
+    </div>
+  </form>
+{% endblock %}

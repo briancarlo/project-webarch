@@ -1,0 +1,221 @@
+                        body {
+                            background-color: #66FFFF;
+                        }
+
+                        .navbar{
+                            width: 700px;
+                            border: 0px solid yellow;
+                            margin-right: auto;
+                            margin-left: auto;
+                            height: 50px;
+                            position: relative;
+                            margin-top: 20px;
+                            padding-top: 100px
+                        }
+
+                        .login{
+                            border: 0px dotted green;
+                            color: #F7F7F7;
+                            float: right;
+                            font-family: "Slackey", tahoma;
+                            font-size: 18px;
+                            position: absolute;
+                            bottom:0;
+                            right: -100px;
+                            text-decoration: none;
+                        }
+
+                        a.brand{
+                            text-decoration: none;
+                            color: #F7F7F7;
+                            margin-bottom: 0px;
+                            vertical-align: bottom;
+                            font-family: 'Slackey', tahoma;
+                            font-size: 42px;
+                            font-weight: 700;
+                            border: 0px solid blue;
+                            float:left;
+                            position: absolute;
+                            bottom: 0;
+                            padding: 30px;
+                        }
+
+                        .urlentry{
+                            margin-top: 20px;
+                            border: 0px solid red;
+                            width: 1000px;
+                            margin-right: auto;
+                            margin-left: auto;
+                            padding: 20px;
+                            background-color: rgba(255, 255, 255, 0.88);
+                        }
+
+
+                        label{
+                            font-family: "Slackey", tahoma;
+                            font-size: 16px;
+                        }
+
+                        h3{
+                            font-family: "Slackey", tahoma;
+                            font-size: 20px;
+                            margin-bottom: 0px;
+                        }
+
+                        h4{
+                            font-family: "Open Sans", tahoma;
+                            font-weight: 300;
+                            font-size: 20px;
+                        }
+
+                        p{
+                            font-family: "Open Sans", tahoma;
+                            font-weight: 300;
+                            font-style: italic;
+                            font-size: 16px;
+                            margin-top: 5px;
+                            text-align: center;
+                        }
+
+                        button{
+                            font-family: "Ubuntu Mono", tahoma;
+                            color: yellow;
+                            margin-top: 15px;
+                        }
+
+                        .help-block{
+                            font-family: "Open Sans", tahoma;
+                            font-weight: 300;
+                            color: gray;
+                            font-size: 12px;
+                        }
+
+                        .btn {
+                            margin-left: 0px;
+                            margin-bottom: 15px;
+                            background-color:#66FFFF;
+                            -moz-border-radius:7px;
+                            -webkit-border-radius:7px;
+                            border-radius:7px;
+                            border:2px solid black;
+                            display:inline-block;
+                            cursor:pointer;
+                            color:black;
+                            font-family:"Slackey";
+                            font-size:16px;
+                            text-decoration:none;
+                          }
+
+                        .btn:hover {
+                            background-color:transparent;
+                        }
+
+                        .btn:active {
+                            position:relative;
+                            top:1px;
+                        }
+
+                        .form-group {
+                            margin-top: 15px;
+                            margin-bottom: 0px;
+                        }
+
+                        .signup{
+                            margin-top: 10px;
+                            margin-left: 20px;
+                            margin-right: 20px;
+                            border: 0px solid red;
+                            width: 700px;
+                            margin-right: auto;
+                            margin-left: 60px;
+                           /* margin-left: auto;*/
+                            padding: 20px;
+                            background-color: rgba(255, 255, 255, 0);                           
+                        }
+
+                        .control-group{
+                            margin-top: 15px;
+                            margin-bottom: 0px;
+                        }
+
+                        .messages{
+                            margin-top: 10px;
+                            border: 0px solid red;
+                            width: 600px;
+                            margin-right: auto;
+                            margin-left: auto;
+                            padding: 20px;
+                            background-color: rgba(255, 255, 255, 0); 
+                            color: #000066;
+                        }
+
+                        table {
+                          border-collapse: collapse;
+                          border: 1px solid #eee;
+                        }
+
+                        video#bgvid {
+                            position: fixed; right: 0; bottom: 0;
+                            min-width: 100%; min-height: 100%;
+                            width: auto; height: auto; z-index: -100;
+                            background: url(Best Fails.jpg) no-repeat;
+                            background-size: cover;
+                        }
+                        video#bgvid { 
+                            transition: 1s opacity; }
+                            .stopfade { opacity: .5; }
+
+                        .vidpause {
+                            background-color:transparent;
+                            -moz-border-radius:7px;
+                            -webkit-border-radius:7px;
+                            border-radius:7px;
+                            border:1px solid #282c80;
+                            display:inline-block;
+                            cursor:pointer;
+                            color:white;
+                            font-family:slackey;
+                            font-size:30px;
+                            text-decoration:none;
+                        }
+
+                         table#linkstats {
+                          font-family: 'Open Sans';
+                          margin-top: 20px;
+                          margin-left: 0px;
+                          border: 1px solid #eee;
+                          border-bottom: 2px solid #00cccc;
+                        }
+
+                        table#topstats{
+                          font-family: 'Open Sans';
+                          margin-top: 20px;
+                          margin-left: 0px;
+                          border: 1px solid #eee;
+                          border-bottom: 2px solid #00cccc;
+                        }
+
+                        #dashboard2{
+                            width: 400px;
+                            margin-left: 500px;
+                            margin-top: -170px;
+                        }
+
+                        tr.first{
+                          font-family: 'Slackey', tahoma; 
+                          font-size: 18px; 
+                        }
+
+                        td {
+                            color: #999;
+                            border: 1px solid #eee;
+                            padding: 12px 25px;
+                            border-collapse: collapse;
+                            font-size: 12px;
+                        }
+
+                        a.dashlinks{
+                            text-decoration: none;
+                            color: #999;
+                        }
+
